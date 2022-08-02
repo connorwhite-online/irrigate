@@ -20,5 +20,13 @@ void setup() {
 
 void loop() {
     t = rtc.getTime();
-    delay (1000);
+    delay (1000); // Get time every second
+
+    if(t.hour == 18) { // If the hour is 6pm
+        digitalWrite(Relay, HIGH); // Turn on relay which opens solenoid
+        delay(300000); // Sprinklers turn on for 5 minutes then shut off
+    }
+    else {
+        digitalWrite(Relay, LOW); // Relay is off, solenoid is closed
+    }
 }
