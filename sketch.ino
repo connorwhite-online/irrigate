@@ -14,6 +14,11 @@ void setup() {
   digitalWrite(Relay, LOW);
 
   rtc.setDOW(1); // Day of week is set to Monday (1-7)
-  rtc.setTime(12, 0, 0); // Time is set to 12:00:00 (24-hour format)
-  rtc.setDate(6, 8, 2022); // Date is set to 8/6/2019 DD, MM, YYYY
+  rtc.setTime(12, 0, 0); // Time is set to 12:00:00 (24-hour format) (HH, MM, SS)
+  rtc.setDate(6, 8, 2022); // Date is set to 8/6/2019 (DD, MM, YYYY)
+}
+
+void loop() {
+    t = rtc.getTime();
+    delay (1000);
 }
